@@ -19,8 +19,8 @@ const projects = [
     title: "Portfolio Website",
     description: "A personal portfolio built with React, Tailwind CSS, and Vite to showcase projects and skills with smooth animations and responsive design. It highlights professional experience, achievements, and provides easy ways to connect.",
     img: "portfolio.png",
-    demo: "#", 
-    github: "#", 
+    demo: "https://contact-us-portfolio.vercel.app/", 
+    github: "https://github.com/SinghShubhamkumarkrishnadev/contact-us-portfolio", 
   },
 ];
 
