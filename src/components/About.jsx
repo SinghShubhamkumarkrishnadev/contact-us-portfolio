@@ -17,7 +17,7 @@ function About() {
           className="flex justify-center"
         >
           <img
-            src="https://github.com/SinghShubhamkumarkrishnadev.png"
+            src="sk.png"
             alt="Profile"
             className="rounded-2xl shadow-lg w-48 sm:w-64 md:w-72 lg:w-80"
           />
