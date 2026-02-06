@@ -46,7 +46,7 @@ function Hero() {
           Contact Me
         </a>
         <a
-          href="https://drive.google.com/file/d/1vAiJR4fba2IgAlvPmeW_LfeW9R3tukId/view?usp=sharing"
+          href="https://drive.google.com/file/d/1lVibznwb3RFQZgKhSYjukugdJnGDCgUb/view?usp=sharing"
           download
           className="px-4 sm:px-6 py-2 sm:py-3 bg-green-500 hover:bg-green-600 rounded-full font-semibold text-sm sm:text-base transition"
         >
