@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
-    title: "Movie Dekho with Shubham",
-    description: "A full-stack movie app with backend powered by Spring Boot microservices, featuring search, pagination, filtering, and secure API documentation through Swagger.",
-    img: "movieDekho.png", 
-    demo: "https://movie-dekho-with-shubham.vercel.app/",
-    github: "https://github.com/SinghShubhamkumarkrishnadev/MovieDekho-With-Shubham", 
-  },
+  title: "Movie Dekho with Shubham",
+  description: "A movie information web application built using Flask and TMDB API, featuring movie search, popular listings, recommendations, and dynamic data rendering.",
+  img: "movieDekho.png",
+  demo: "https://movie-dekho-with-shubham.vercel.app/",
+  github: "https://github.com/SinghShubhamkumarkrishnadev/MovieDekho-With-Shubham",
+},
   {
     title: "Student Attendance System",
     description: "Mobile apps for professors and students to manage and query attendance with AI support, along with a website for HODs to oversee classes and track attendance.",
