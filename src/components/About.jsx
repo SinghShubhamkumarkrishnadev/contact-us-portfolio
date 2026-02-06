@@ -35,45 +35,46 @@ function About() {
           </h2>
           <div className="mb-8 px-4 sm:px-0">
             <p className="text-center text-base sm:text-lg mb-4">
-              🚀 <strong>Backend Developer | Java Enthusiast | Spring Boot | Microservices | DevOps Learner</strong>
+              🚀 <strong>Machine Learning Enthusiast | Python Developer | Data Analysis</strong>
             </p>
             <p className="text-sm sm:text-base text-gray-700 mb-6 text-center md:text-left max-w-xl mx-auto md:mx-0">
-              Hi, I'm <span className="font-semibold">Singh ShubhamKumar Krishnadev</span>, a passionate software developer who loves creating modern and user-friendly websites and mobile applications. I enjoy solving problems, building cool projects, and learning new technologies every day.
+              Hi, I'm <span className="font-semibold">Singh Shubham Kumar</span>, a final-year Computer Science student passionate about machine learning and data-driven problem solving. I enjoy working with data, building predictive models, and developing Python-based applications while continuously strengthening my core computer science fundamentals.
             </p>
           </div>
 
-          <h3 className="text-xl sm:text-2xl font-semibold mb-3 text-center md:text-left">Tech Stack</h3>
+          <h3 className="text-xl sm:text-2xl font-semibold mb-3 text-center md:text-left">
+            Tech Stack
+          </h3>
           <div className="flex flex-wrap justify-center md:justify-start gap-3 sm:gap-4">
-            {/* Frontend */}
-            <span className="px-3 py-2 text-xs sm:text-sm bg-amber-50 rounded-lg shadow">⚛️ React</span>
-            <span className="px-3 py-2 text-xs sm:text-sm bg-yellow-50 rounded-lg shadow">🎨 Tailwind CSS</span>
 
-            {/* Backend */}
-            <span className="px-3 py-2 text-xs sm:text-sm bg-stone-50 rounded-lg shadow">☕ Java</span>
-            <span className="px-3 py-2 text-xs sm:text-sm bg-zinc-50 rounded-lg shadow">🌱 Spring Boot</span>
-            <span className="px-3 py-2 text-xs sm:text-sm bg-neutral-50 rounded-lg shadow">🔐 Spring Security</span>
-            <span className="px-3 py-2 text-xs sm:text-sm bg-amber-100 rounded-lg shadow">☁️ Spring Cloud</span>
+            {/* Programming & ML */}
+            <span className="px-3 py-2 text-xs sm:text-sm bg-amber-50 rounded-lg shadow">🐍 Python</span>
+            <span className="px-3 py-2 text-xs sm:text-sm bg-yellow-50 rounded-lg shadow">📊 Machine Learning</span>
+            <span className="px-3 py-2 text-xs sm:text-sm bg-stone-50 rounded-lg shadow">📈 Linear Regression</span>
 
-            {/* Microservices */}
-            <span className="px-3 py-2 text-xs sm:text-sm bg-stone-100 rounded-lg shadow">🛰️ REST APIs</span>
-            <span className="px-3 py-2 text-xs sm:text-sm bg-yellow-100 rounded-lg shadow">🔄 Microservices</span>
-            <span className="px-3 py-2 text-xs sm:text-sm bg-amber-50 rounded-lg shadow">📡 Eureka / API Gateway</span>
+            {/* Libraries */}
+            <span className="px-3 py-2 text-xs sm:text-sm bg-zinc-50 rounded-lg shadow">🧠 Scikit-learn</span>
+            <span className="px-3 py-2 text-xs sm:text-sm bg-neutral-50 rounded-lg shadow">📑 Pandas</span>
+            <span className="px-3 py-2 text-xs sm:text-sm bg-amber-100 rounded-lg shadow">🔢 NumPy</span>
+
+            {/* Data Processing */}
+            <span className="px-3 py-2 text-xs sm:text-sm bg-stone-100 rounded-lg shadow">🧹 Data Cleaning</span>
+            <span className="px-3 py-2 text-xs sm:text-sm bg-yellow-100 rounded-lg shadow">🛠️ Feature Engineering</span>
+            <span className="px-3 py-2 text-xs sm:text-sm bg-amber-50 rounded-lg shadow">📂 Data Preprocessing</span>
+
+            {/* Web & APIs */}
+            <span className="px-3 py-2 text-xs sm:text-sm bg-stone-50 rounded-lg shadow">🌐 Flask</span>
+            <span className="px-3 py-2 text-xs sm:text-sm bg-amber-100 rounded-lg shadow">🔌 REST APIs</span>
 
             {/* Databases */}
-            <span className="px-3 py-2 text-xs sm:text-sm bg-stone-50 rounded-lg shadow">🗄️ MySQL</span>
-            <span className="px-3 py-2 text-xs sm:text-sm bg-amber-100 rounded-lg shadow">🐘 PostgreSQL</span>
-            <span className="px-3 py-2 text-xs sm:text-sm bg-yellow-50 rounded-lg shadow">🍃 MongoDB</span>
+            <span className="px-3 py-2 text-xs sm:text-sm bg-yellow-50 rounded-lg shadow">🗄️ MySQL</span>
+            <span className="px-3 py-2 text-xs sm:text-sm bg-neutral-50 rounded-lg shadow">🧾 SQL</span>
 
-            {/* DevOps */}
-            <span className="px-3 py-2 text-xs sm:text-sm bg-zinc-50 rounded-lg shadow">🐳 Docker</span>
-            <span className="px-3 py-2 text-xs sm:text-sm bg-stone-100 rounded-lg shadow">☸️ Kubernetes (Learning)</span>
-            <span className="px-3 py-2 text-xs sm:text-sm bg-amber-50 rounded-lg shadow">⚙️ Jenkins (Learning)</span>
+            {/* Tools & CS */}
+            <span className="px-3 py-2 text-xs sm:text-sm bg-zinc-50 rounded-lg shadow">🐙 Git & GitHub</span>
+            <span className="px-3 py-2 text-xs sm:text-sm bg-stone-100 rounded-lg shadow">🧠 DSA</span>
+            <span className="px-3 py-2 text-xs sm:text-sm bg-amber-50 rounded-lg shadow">💻 OS & Computer Networks</span>
 
-            {/* Tools */}
-            <span className="px-3 py-2 text-xs sm:text-sm bg-yellow-100 rounded-lg shadow">🔧 Maven / Gradle</span>
-            <span className="px-3 py-2 text-xs sm:text-sm bg-stone-50 rounded-lg shadow">🧪 JUnit / Mockito</span>
-            <span className="px-3 py-2 text-xs sm:text-sm bg-amber-100 rounded-lg shadow">📝 Swagger / Postman</span>
-            <span className="px-3 py-2 text-xs sm:text-sm bg-neutral-50 rounded-lg shadow">🐙 Git & GitHub</span>
           </div>
         </motion.div>
       </div>
