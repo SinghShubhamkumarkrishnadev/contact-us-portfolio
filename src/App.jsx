@@ -1,32 +1,25 @@
-import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Experience from "./components/Experience";
+import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
-
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [darkMode]);
-
   return (
-    <div className={darkMode ? "dark bg-gray-900 text-white" : "bg-white text-gray-900"}>
+    <div className="min-h-screen">
       <Navbar />
-      <Hero />
-      <About />
-      <Projects />
-      <Contact />
-
-      {/* Footer */}
-      <footer className="bg-gray-800 dark:bg-gray-950 text-white py-4 text-center">
-        © {new Date().getFullYear()} MyPortfolio. All rights reserved.
+      <main>
+        <Hero />
+        <About />
+        <Experience />
+        <Skills />
+        <Projects />
+        <Contact />
+      </main>
+      <footer className="border-t border-line py-8 text-center text-sm text-muted">
+        © {new Date().getFullYear()} Shubham Kumar Singh
       </footer>
     </div>
   );

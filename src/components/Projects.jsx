@@ -1,84 +1,107 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import Section from "./Section";
+import { pipeline, projects } from "../data";
 
-const projects = [
-  {
-  title: "Movie Dekho with Shubham",
-  description: "A movie information web application built using Flask and TMDB API, featuring movie search, popular listings, recommendations, and dynamic data rendering.",
-  img: "movieDekho.png",
-  demo: "https://movie-dekho-with-shubham.vercel.app/",
-  github: "https://github.com/SinghShubhamkumarkrishnadev/MovieDekho-With-Shubham",
-},
-  {
-    title: "Student Attendance System",
-    description: "Mobile apps for professors and students to manage and query attendance with AI support, along with a website for HODs to oversee classes and track attendance.",
-    img: "sattapp.png", 
-    demo: "https://sattapp.netlify.app",
-    github: "https://github.com/SinghShubhamkumarkrishnadev/Student-attendance-client", 
-  },
-  {
-    title: "Portfolio Website",
-    description: "A personal portfolio built with React, Tailwind CSS, and Vite to showcase projects and skills with smooth animations and responsive design. It highlights professional experience, achievements, and provides easy ways to connect.",
-    img: "portfolio.png",
-    demo: "https://contact-us-portfolio.vercel.app/", 
-    github: "https://github.com/SinghShubhamkumarkrishnadev/contact-us-portfolio", 
-  },
-];
+function Pipeline() {
+  const [i, setI] = useState(0);
+  const main = projects[0];
+
+  return (
+    <div className="mb-12 pb-12 border-b border-line">
+      <p className="eyebrow text-accent mb-3">Featured · {main.period}</p>
+      <h3 className="text-3xl sm:text-4xl">{main.title}</h3>
+      <p className="mt-4 text-muted leading-relaxed max-w-2xl">
+        Manual review of long documents was slow and inconsistent. I built a modular 7-step AI pipeline with role-based
+        access through Microsoft Entra ID, cutting review turnaround by 75%. Switching to uv made dependency resolution
+        3x faster.
+      </p>
+
+      <p className="mt-8 text-sm text-muted">Select a stage:</p>
+      <ol className="mt-3 flex flex-wrap gap-2">
+        {pipeline.map((s, k) => (
+          <li key={s.name}>
+            <button
+              onClick={() => setI(k)}
+              className={`px-3 py-1.5 text-sm border transition-colors ${
+                i === k ? "bg-ink text-bg border-ink" : "border-line text-muted hover:border-ink hover:text-ink"
+              }`}
+            >
+              {k + 1}. {s.name}
+            </button>
+          </li>
+        ))}
+      </ol>
+
+      <AnimatePresence mode="wait">
+        <motion.p
+          key={i}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.15 }}
+          className="mt-4 text-ink bg-panel px-4 py-3 text-sm"
+        >
+          <b>{pipeline[i].name}.</b> {pipeline[i].desc}
+        </motion.p>
+      </AnimatePresence>
+
+      <p className="mt-5 text-sm text-muted">{main.tags.join(" · ")}</p>
+    </div>
+  );
+}
 
 function Projects() {
-  return (
-    <section
-      id="projects"
-      className="min-h-screen bg-gray-900 text-white px-4 sm:px-6 lg:px-8 py-12 sm:py-20"
-    >
-      <div className="max-w-3xl sm:max-w-4xl lg:max-w-6xl mx-auto text-center mb-8 sm:mb-12">
-        <h2 className="text-3xl sm:text-4xl font-bold">My Projects</h2>
-        <p className="text-gray-400 mt-2 text-sm sm:text-base">
-          Here are some of the projects I have worked on recently.
-        </p>
-      </div>
+  const [filter, setFilter] = useState("All");
+  const list = projects.slice(1).filter((p) => filter === "All" || p.category === filter);
 
-      {/* Projects Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
-        {projects.map((project, index) => (
-          <motion.div
-            key={index}
-            className="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:scale-105 transform transition duration-300"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+  return (
+    <Section id="projects" index="04" title="Projects">
+      <Pipeline />
+
+      <div className="flex gap-5 mb-2 text-sm">
+        {["All", "AI", "Mobile"].map((f) => (
+          <button
+            key={f}
+            onClick={() => setFilter(f)}
+            className={`pb-1 border-b ${
+              filter === f ? "border-accent text-ink" : "border-transparent text-muted hover:text-ink"
+            }`}
           >
-            <img
-              src={project.img}
-              alt={project.title}
-              className="w-full h-48 sm:h-56 object-cover"
-            />
-            <div className="p-4 sm:p-5 text-left">
-              <h3 className="text-xl sm:text-2xl font-semibold mb-2">{project.title}</h3>
-              <p className="text-gray-300 text-sm sm:text-base mb-4">{project.description}</p>
-              <div className="flex flex-wrap gap-3">
-                <a
-                  href={project.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2 bg-blue-500 hover:bg-blue-600 rounded-lg text-sm sm:text-base transition w-full sm:w-auto text-center"
-                >
-                  Live Demo
-                </a>
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2 border border-gray-400 hover:border-blue-400 rounded-lg text-sm sm:text-base transition w-full sm:w-auto text-center"
-                >
-                  GitHub
-                </a>
-              </div>
-            </div>
-          </motion.div>
+            {f}
+          </button>
         ))}
       </div>
-    </section>
+
+      <div className="border-t border-line">
+        <AnimatePresence initial={false}>
+          {list.map((p, k) => (
+            <motion.article
+              key={p.title}
+              layout
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="group grid sm:grid-cols-12 gap-3 sm:gap-6 py-6 border-b border-line"
+            >
+              <span className="sm:col-span-1 text-sm text-muted">{String(k + 1).padStart(2, "0")}</span>
+              <div className="sm:col-span-7">
+                <h3 className="text-2xl group-hover:text-accent transition-colors">{p.title}</h3>
+                {p.period && <p className="text-xs text-muted mt-1">{p.period}</p>}
+                <p className="mt-3 text-muted leading-relaxed text-[15px]">{p.desc}</p>
+              </div>
+              <div className="sm:col-span-4 flex flex-wrap content-start gap-1.5">
+                {p.tags.map((t) => (
+                  <span key={t} className="px-2 py-0.5 text-xs bg-panel text-muted">
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </motion.article>
+          ))}
+        </AnimatePresence>
+      </div>
+    </Section>
   );
 }
 
